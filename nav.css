@@ -1,0 +1,215 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0.8rem 5rem;
+}
+
+nav .logo span {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu .desktop-ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navList {
+    margin-right: 70px;
+}
+
+.navList a {
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.navList label {
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu .desktop-ul li:last-child {
+    margin-right: 0;
+}
+
+.dropdown-container {
+    overflow: hidden;
+}
+
+.dropdown-nav-menu {
+    position: absolute;
+    display: none;
+    padding: 20px 0;
+    transform: translateX(-140px);
+}
+
+.dd-m-list {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+.dropdown-nav-menu span {
+    margin-bottom: 8px;
+    border-bottom: 1px solid white;
+    padding: 10px 40px;
+    width: 100%;
+}
+
+.dropdown-nav-menu span a {
+    letter-spacing: 2px;
+    font-size: 19px;
+    transition: all 0.5s;
+}
+
+.dropdown-nav-menu span a:hover {
+    text-decoration: underline;
+}
+
+#project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+}
+
+#down {
+    width: 18px;
+    padding: 12px 8px 0 8px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#project:hover .dropdown-nav-menu {
+    display: flex;
+}
+
+#project:hover #down {
+    transform: rotate(180deg) translateY(-3px);
+    padding: 0;
+}
+
+.icon-bar {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: white;
+    border-radius: 30px;
+}
+
+.active .bar-3 {
+    transform: rotate(315deg) translateY(-8px) translateX(7px);
+}
+
+.active .bar-2 {
+    display: none;
+}
+
+.active .bar-1 {
+    transform: rotate(41deg);
+    transition-delay: 0.1s;
+}
+
+nav .menu-icon {
+    display: none;
+}
+
+nav .menu-icon * {
+    transition: all 0.6s ease;
+}
+
+.mobile-ul {
+    display: none;
+}
+
+.mobile-ul * {
+    color: #000;
+}
+
+@media screen and (max-width: 860px) {
+    nav .nav-menu .desktop-ul {
+        display: none;
+    }
+    nav .menu-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        cursor: pointer;
+    }
+    nav {
+        position: sticky;
+        z-index: 5;
+    }
+    .mobile-ul {
+        display: flex;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: -120vh;
+        left: 0;
+        background-color: yellow;
+        z-index: 4;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        gap: 60px;
+        text-transform: capitalize;
+        letter-spacing: 1.2px;
+        transition: all 0.6s ease-out;
+    }
+    .mobile-ul.active {
+        top: 0;
+    }
+    .mobile-dd-menu img {
+        width: 15px;
+        margin-top: 6px;
+        transition: all 0.4s ease;
+    }
+    .mobile-dd-menu img.active {
+        transform: rotate(180deg);
+    }
+    .m-dd-menu-img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    .m-dd-menu-list {
+        display: none;
+    }
+    .m-dd-menu-list.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .menu-icon.active {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    nav {
+        padding: 0.8rem 2rem;
+    }
+}
